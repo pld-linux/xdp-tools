@@ -8,6 +8,7 @@ Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
 Source0:	https://github.com/xdp-project/xdp-tools/releases/download/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	f4a4050e5f79b518d561c8701c3dfd68
+Patch0:		%{name}-types.patch
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 10
 BuildRequires:	elfutils-devel
@@ -65,6 +66,7 @@ Statyczna biblioteka libxdp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 CC="%{__cc}" \
