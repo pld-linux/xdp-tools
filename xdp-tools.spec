@@ -1,14 +1,13 @@
 Summary:	Utilities for use with XDP
 Summary(pl.UTF-8):	Narzędzia do używania z XDP
 Name:		xdp-tools
-Version:	1.2.4
+Version:	1.2.8
 Release:	1
 License:	GPL v2, LGPL v2.1, BSD
 Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
 Source0:	https://github.com/xdp-project/xdp-tools/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f4a4050e5f79b518d561c8701c3dfd68
-Patch0:		%{name}-types.patch
+# Source0-md5:	a518efccdbe4db764c93ee5293228c4a
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 10
 BuildRequires:	elfutils-devel
@@ -66,7 +65,6 @@ Statyczna biblioteka libxdp.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 CC="%{__cc}" \
