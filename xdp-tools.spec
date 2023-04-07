@@ -11,6 +11,8 @@ Source0:	https://github.com/xdp-project/xdp-tools/releases/download/v%{version}/
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 11
 BuildRequires:	elfutils-devel
+# bpftool
+BuildRequires:	kernel-tools >= 4.15
 BuildRequires:	libbpf-devel
 BuildRequires:	libpcap-devel
 BuildRequires:	pkgconfig
