@@ -69,6 +69,7 @@ Statyczna biblioteka libxdp.
 %setup -q
 
 %build
+BPFTOOL=/usr/sbin/bpftool \
 CC="%{__cc}" \
 ./configure
 
