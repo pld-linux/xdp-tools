@@ -1,19 +1,23 @@
 Summary:	Utilities for use with XDP
 Summary(pl.UTF-8):	Narzędzia do używania z XDP
 Name:		xdp-tools
-Version:	1.3.1
-Release:	2
+Version:	1.4.1
+Release:	1
 License:	GPL v2, LGPL v2.1, BSD
 Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
-Source0:	https://github.com/xdp-project/xdp-tools/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	bcb5da2c160bfe120198e08d8da8a59d
+Source0:	https://github.com/xdp-project/xdp-tools/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	853214d0219f64eee3373e1f1ec69148
+Patch0:		%{name}-sh.patch
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 11
+# llc
+BuildRequires:	llvm >= 11
 BuildRequires:	elfutils-devel
 # bpftool
 BuildRequires:	kernel-tools >= 4.15
 BuildRequires:	libbpf-devel
+BuildRequires:	libcap-ng-devel
 BuildRequires:	libpcap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
@@ -67,6 +71,7 @@ Statyczna biblioteka libxdp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 BPFTOOL=/usr/sbin/bpftool \
