@@ -1,13 +1,13 @@
 Summary:	Utilities for use with XDP
 Summary(pl.UTF-8):	Narzędzia do używania z XDP
 Name:		xdp-tools
-Version:	1.4.2
+Version:	1.4.3
 Release:	1
 License:	GPL v2, LGPL v2.1, BSD
 Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
 Source0:	https://github.com/xdp-project/xdp-tools/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	58a86d994387b87b7f7b2fe40957f2d2
+# Source0-md5:	9329289c8106e486b904d0285218fbe9
 Patch0:		%{name}-sh.patch
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 11
