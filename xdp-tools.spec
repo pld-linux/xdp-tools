@@ -1,13 +1,13 @@
 Summary:	Utilities for use with XDP
 Summary(pl.UTF-8):	Narzędzia do używania z XDP
 Name:		xdp-tools
-Version:	1.4.3
+Version:	1.5.4
 Release:	1
 License:	GPL v2, LGPL v2.1, BSD
 Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
 Source0:	https://github.com/xdp-project/xdp-tools/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9329289c8106e486b904d0285218fbe9
+# Source0-md5:	e50d4a5441d41749ce75a97e05adec3c
 Patch0:		%{name}-sh.patch
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 11
@@ -105,12 +105,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE LICENSES/BSD-2-Clause README.org
 %attr(755,root,root) %{_sbindir}/xdp-bench
 %attr(755,root,root) %{_sbindir}/xdp-filter
+%attr(755,root,root) %{_sbindir}/xdp-forward
 %attr(755,root,root) %{_sbindir}/xdp-loader
 %attr(755,root,root) %{_sbindir}/xdp-monitor
 %attr(755,root,root) %{_sbindir}/xdp-trafficgen
 %attr(755,root,root) %{_sbindir}/xdpdump
 %{_mandir}/man8/xdp-bench.8*
 %{_mandir}/man8/xdp-filter.8*
+%{_mandir}/man8/xdp-forward.8*
 %{_mandir}/man8/xdp-loader.8*
 %{_mandir}/man8/xdp-monitor.8*
 %{_mandir}/man8/xdp-trafficgen.8*
