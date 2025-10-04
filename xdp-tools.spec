@@ -19,6 +19,7 @@ BuildRequires:	kernel-tools >= 4.15
 BuildRequires:	libbpf-devel
 BuildRequires:	libcap-ng-devel
 BuildRequires:	libpcap-devel
+BuildRequires:	m4
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
 Requires:	libxdp = %{version}-%{release}
