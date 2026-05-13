@@ -1,11 +1,16 @@
---- xdp-tools-1.4.1/configure.orig	2023-10-20 18:08:05.000000000 +0200
-+++ xdp-tools-1.4.1/configure	2023-12-26 11:28:22.685725521 +0100
-@@ -112,7 +112,7 @@ check_toolchain()
+--- xdp-tools-1.6.3/configure.orig	2026-03-25 12:44:04.000000000 +0100
++++ xdp-tools-1.6.3/configure	2026-05-13 21:42:09.038729354 +0200
+@@ -109,11 +109,11 @@ check_toolchain()
          exit 1
+     fi
+ 
+-    if ! command -v $BPFTOOL &>/dev/null; then
++    if ! command -v $BPFTOOL >/dev/null 2>&1; then
+         BPFTOOL=$(whereis -b bpftool | awk '{print $2}')
      fi
  
 -    if command -v $BPFTOOL &>/dev/null && $BPFTOOL gen help 2>&1 | grep 'gen skeleton.*name' > /dev/null; then
 +    if command -v $BPFTOOL >/dev/null 2>&1 && $BPFTOOL gen help 2>&1 | grep 'gen skeleton.*name' > /dev/null; then
          bpftool_version=$($BPFTOOL version | head -n 1)
- 	echo "using $bpftool_version"
+         echo "using $bpftool_version"
      else

@@ -1,13 +1,13 @@
 Summary:	Utilities for use with XDP
 Summary(pl.UTF-8):	Narzędzia do używania z XDP
 Name:		xdp-tools
-Version:	1.5.4
+Version:	1.6.3
 Release:	1
 License:	GPL v2, LGPL v2.1, BSD
 Group:		Applications/System
 #Source0Download: https://github.com/xdp-project/xdp-tools/releases
 Source0:	https://github.com/xdp-project/xdp-tools/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e50d4a5441d41749ce75a97e05adec3c
+# Source0-md5:	64bd2e64b9b0ba699e3dc5c760c4ab5a
 Patch0:		%{name}-sh.patch
 URL:		https://github.com/xdp-project/xdp-tools
 BuildRequires:	clang >= 11
@@ -121,8 +121,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libxdp
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libxdp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libxdp.so.1
+%{_libdir}/libxdp.so.*.*.*
+%ghost %{_libdir}/libxdp.so.1
 %dir %{_libdir}/bpf
 %{_libdir}/bpf/xdp-dispatcher.o
 %{_libdir}/bpf/xdpdump_*.o
@@ -131,7 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libxdp-devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libxdp.so
+%{_libdir}/libxdp.so
 %{_includedir}/xdp
 %{_pkgconfigdir}/libxdp.pc
 %{_mandir}/man3/libxdp.3*
